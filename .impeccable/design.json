@@ -1,0 +1,139 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-18T20:00:00Z",
+  "title": "Design System: Stump Grinding",
+  "extensions": {
+    "colorMeta": {
+      "ground": { "role": "primary", "displayName": "Sign Green", "canonical": "#173d28", "tonalRamp": ["#0b1f14", "#11301f", "#173d28", "#245a3a", "#3a7a52", "#6a9e7b", "#a9c9b1", "#e3efe5"] },
+      "cream": { "role": "primary", "displayName": "Board Cream", "canonical": "#f2ecd9", "tonalRamp": ["#3a3628", "#5e5843", "#857d63", "#ada487", "#cbc2a5", "#e0d8bf", "#f2ecd9", "#faf7ee"] },
+      "sawdust": { "role": "secondary", "displayName": "Sawdust", "canonical": "#e3a95b", "tonalRamp": ["#3d2810", "#61411b", "#8a5c27", "#b47d3a", "#e3a95b", "#ebbf84", "#f3d7b0", "#faefdf"] },
+      "ground-deep": { "role": "neutral", "displayName": "Deep Lawn", "canonical": "#11301f" },
+      "cream-ink": { "role": "neutral", "displayName": "Board Ink", "canonical": "#173d28" },
+      "ink-soft": { "role": "neutral", "displayName": "Sage", "canonical": "#c9d8c4" },
+      "ink-soft-cream": { "role": "neutral", "displayName": "Board Moss", "canonical": "#3f5a46" },
+      "error": { "role": "neutral", "displayName": "Clay Pink", "canonical": "#ffb4a2" }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Hero headline only; uppercase, font-stretch condensed, text-wrap balance. Desktop size clamp(56px, 6.2vw, 84px)." },
+      "headline": { "displayName": "Headline", "purpose": "Section headings on boards and the quote section; uppercase, framed by rule lines on boards." },
+      "phone": { "displayName": "Phone", "purpose": "Footer phone number between rule bars." },
+      "title": { "displayName": "Title", "purpose": "Step titles." },
+      "body": { "displayName": "Body", "purpose": "Running text, 30-44ch measure." },
+      "label": { "displayName": "Label", "purpose": "Form labels, legends, chips, text links." },
+      "small": { "displayName": "Small", "purpose": "Helper text, errors, message preview." }
+    },
+    "shadows": [
+      { "name": "focus-glow", "value": "0 0 0 3px rgba(227,169,91,.35)", "purpose": "Sawdust glow on focused fields, chips and the form submit. State only; surfaces are flat." }
+    ],
+    "motion": [
+      { "name": "state-fast", "value": "0.15s", "purpose": "Field, chip and press transitions." },
+      { "name": "state", "value": "0.2s", "purpose": "Button and link color/border transitions." },
+      { "name": "press", "value": "transform: scale(.98)", "purpose": "Button active state; off under reduced motion." },
+      { "name": "hint-fade", "value": "opacity 0.6s", "purpose": "Yard hint disappears on first touch or when the lawn regrows." },
+      { "name": "stump-cycle", "value": "GRIND 2.6/s, LAWN_AT 0.15, lawn fade 1.2s, hold to 3.7s, stump return 1s, REGROW_AFTER 4.5s, REGROW 0.55/s, AUTO_AFTER 6s", "purpose": "Hero stump grind, regrow and auto-sweep timing; constants at top of the stump script." },
+      { "name": "grass-spring", "value": "stiffness 38, damping 6.5, reach 70px, SWAY 1.0, PUSH 1.0", "purpose": "Grass edge sway and pointer parting; constants at top of the grass script." },
+      { "name": "still-switch", "value": "STILL = false", "purpose": "Set true (or prefers-reduced-motion) to render one still frame everywhere." }
+    ],
+    "breakpoints": [
+      { "name": "small-phone", "value": "max-width: 379px" },
+      { "name": "desktop", "value": "min-width: 860px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Solid Button",
+      "kind": "button",
+      "refersTo": "button-solid",
+      "description": "Primary action on green: text a photo, submit the form.",
+      "html": "<a class=\"ds-btn ds-btn-solid\" href=\"#\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linejoin=\"round\" d=\"M4 5h16a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H10l-5 4v-4H4a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1z\"/></svg>Text us a photo</a>",
+      "css": ".ds-btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:58px;padding:0 22px;border-radius:999px;border:2px solid var(--cream,#f2ecd9);font:800 17px/1.1 -apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',Arial,sans-serif;text-decoration:none;cursor:pointer;transition:background-color .2s,color .2s,border-color .2s,transform .15s}.ds-btn svg{width:22px;height:22px}.ds-btn-solid{background:var(--cream,#f2ecd9);color:var(--cream-ink,#173d28)}.ds-btn-solid:hover{background:var(--sawdust,#e3a95b);border-color:var(--sawdust,#e3a95b)}.ds-btn:focus-visible{outline:3px solid var(--sawdust,#e3a95b);outline-offset:3px}.ds-btn:active{transform:scale(.98)}"
+    },
+    {
+      "name": "Line Button",
+      "kind": "button",
+      "refersTo": "button-line",
+      "description": "Secondary action on green: jump to the quote form.",
+      "html": "<a class=\"ds-btn-line\" href=\"#\">Free quote form</a>",
+      "css": ".ds-btn-line{display:inline-flex;align-items:center;justify-content:center;min-height:58px;padding:0 22px;border-radius:999px;border:2px solid var(--cream,#f2ecd9);background:transparent;color:var(--cream,#f2ecd9);font:800 17px/1.1 -apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',Arial,sans-serif;text-decoration:none;transition:color .2s,border-color .2s,transform .15s}.ds-btn-line:hover{border-color:var(--sawdust,#e3a95b);color:var(--sawdust,#e3a95b)}.ds-btn-line:focus-visible{outline:3px solid var(--sawdust,#e3a95b);outline-offset:3px}.ds-btn-line:active{transform:scale(.98)}"
+    },
+    {
+      "name": "Text Field",
+      "kind": "input",
+      "refersTo": "input-field",
+      "description": "Cream field on green with label above.",
+      "html": "<label class=\"ds-label\" for=\"ds-f\">Your name</label><input class=\"ds-input\" id=\"ds-f\" type=\"text\" placeholder=\"First and last name\">",
+      "css": ".ds-label{display:block;font:700 17px/1.3 -apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;color:var(--cream,#f2ecd9);margin:0 0 8px}.ds-input{width:100%;box-sizing:border-box;font:400 17px/1.4 -apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;color:var(--cream-ink,#173d28);background:var(--cream,#f2ecd9);border:2px solid var(--cream,#f2ecd9);border-radius:12px;padding:14px;min-height:54px;outline:none;transition:border-color .15s,box-shadow .15s}.ds-input::placeholder{color:#55695a}.ds-input:hover{border-color:var(--sawdust,#e3a95b)}.ds-input:focus{border-color:var(--sawdust,#e3a95b);box-shadow:0 0 0 3px rgba(227,169,91,.35)}"
+    },
+    {
+      "name": "Radio Chips",
+      "kind": "chip",
+      "refersTo": "chip",
+      "description": "Single-choice count picker on green.",
+      "html": "<div class=\"ds-chips\"><label class=\"ds-chip\"><input type=\"radio\" name=\"ds-c\" checked><span>1</span></label><label class=\"ds-chip\"><input type=\"radio\" name=\"ds-c\"><span>2</span></label><label class=\"ds-chip\"><input type=\"radio\" name=\"ds-c\"><span>4+</span></label></div>",
+      "css": ".ds-chips{display:flex;flex-wrap:wrap;gap:10px}.ds-chip{position:relative}.ds-chip input{position:absolute;opacity:0;width:1px;height:1px}.ds-chip span{display:flex;align-items:center;justify-content:center;min-width:64px;min-height:50px;padding:0 18px;border-radius:12px;border:2px solid var(--ink-soft,#c9d8c4);color:var(--cream,#f2ecd9);font:700 17px/1 -apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;cursor:pointer;transition:border-color .15s,background-color .15s,color .15s}.ds-chip span:hover{border-color:var(--sawdust,#e3a95b)}.ds-chip input:focus-visible+span{border-color:var(--sawdust,#e3a95b);box-shadow:0 0 0 3px rgba(227,169,91,.35)}.ds-chip input:checked+span{background:var(--cream,#f2ecd9);color:var(--cream-ink,#173d28);border-color:var(--cream,#f2ecd9)}"
+    },
+    {
+      "name": "Sign Board Heading",
+      "kind": "card",
+      "refersTo": "sign-board",
+      "description": "Cream board with the headline between the sign's 3px rule lines.",
+      "html": "<section class=\"ds-board\"><hr class=\"ds-rule\"><h2 class=\"ds-h2\">Send a picture, get a price.</h2><hr class=\"ds-rule\"></section>",
+      "css": ".ds-board{background:var(--cream,#f2ecd9);color:var(--cream-ink,#173d28);padding:44px 20px 60px}.ds-rule{height:3px;background:var(--cream-ink,#173d28);border:0;margin:0}.ds-h2{font:900 clamp(32px,8.6vw,56px)/.98 'Arial Narrow','Helvetica Neue','sans-serif-condensed','Roboto Condensed',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;font-stretch:condensed;text-transform:uppercase;letter-spacing:-.005em;margin:16px 0}"
+    },
+    {
+      "name": "Step",
+      "kind": "custom",
+      "refersTo": "step-numeral",
+      "description": "Numbered step on a board: green disc numeral, title, body.",
+      "html": "<div class=\"ds-step\"><span class=\"ds-n\">1</span><div><h3>Snap the stump</h3><p>Stand back far enough to get the whole stump.</p></div></div>",
+      "css": ".ds-step{display:grid;grid-template-columns:52px 1fr;gap:14px;background:var(--cream,#f2ecd9);padding:16px;color:var(--cream-ink,#173d28)}.ds-n{width:52px;height:52px;border-radius:50%;background:var(--cream-ink,#173d28);color:var(--cream,#f2ecd9);display:grid;place-items:center;font:900 26px/1 'Arial Narrow','Helvetica Neue','sans-serif-condensed','Roboto Condensed',Arial,sans-serif}.ds-step h3{font:800 21px/1.2 -apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;margin:4px 0}.ds-step p{margin:0;color:var(--ink-soft-cream,#3f5a46);font:400 17px/1.55 -apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif}"
+    },
+    {
+      "name": "Footer Phone Band",
+      "kind": "custom",
+      "description": "The sign's bottom panel: phone number at display size between cream rule bars.",
+      "html": "<div class=\"ds-band\"><span class=\"ds-band-rule\"></span><a class=\"ds-big-tel\" href=\"#\">732-581-5311</a><span class=\"ds-band-rule\"></span></div>",
+      "css": ".ds-band{display:flex;align-items:center;gap:14px;max-width:760px;background:var(--ground,#173d28);padding:20px;color:var(--cream,#f2ecd9)}.ds-band-rule{flex:1;height:3px;background:var(--cream,#f2ecd9);opacity:.85}.ds-big-tel{font:900 clamp(40px,11vw,76px)/1 'Arial Narrow','Helvetica Neue','sans-serif-condensed','Roboto Condensed',Arial,sans-serif;font-stretch:condensed;letter-spacing:.01em;color:inherit;text-decoration:none;white-space:nowrap;padding:6px 0;border-bottom:3px solid transparent;transition:border-color .2s}.ds-big-tel:hover{border-bottom-color:var(--sawdust,#e3a95b)}"
+    },
+    {
+      "name": "Header",
+      "kind": "nav",
+      "description": "Wordmark left, phone number right. No menu.",
+      "html": "<header class=\"ds-top\"><a class=\"ds-brand\" href=\"#\"><svg viewBox=\"0 0 64 50\" width=\"34\" aria-hidden=\"true\"><path fill=\"currentColor\" d=\"M15 14c0 11-2 18-12 29l12-3 4 5 6-5 5 6 5-6 6 5 4-5 12 3C47 32 49 25 49 14z\"/><ellipse fill=\"#173d28\" stroke=\"currentColor\" cx=\"32\" cy=\"14\" rx=\"17\" ry=\"7.5\" stroke-width=\"2.6\"/><ellipse fill=\"none\" stroke=\"currentColor\" cx=\"32\" cy=\"14\" rx=\"10.5\" ry=\"4.4\" stroke-width=\"2\"/></svg><b>Stump Grinding</b></a><a class=\"ds-tel\" href=\"#\">732-581-5311</a></header>",
+      "css": ".ds-top{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 20px;background:var(--ground,#173d28);color:var(--cream,#f2ecd9)}.ds-brand{display:flex;align-items:center;gap:9px;color:inherit;text-decoration:none;min-height:44px}.ds-brand b{font:800 17px/1 'Arial Narrow','Helvetica Neue','sans-serif-condensed','Roboto Condensed',Arial,sans-serif;letter-spacing:.04em;text-transform:uppercase;font-stretch:condensed}.ds-tel{font:800 17px/1 'Arial Narrow','Helvetica Neue','sans-serif-condensed','Roboto Condensed',Arial,sans-serif;letter-spacing:.02em;color:inherit;text-decoration:none;min-height:44px;display:flex;align-items:center;border-bottom:2px solid transparent;transition:border-color .2s}.ds-tel:hover{border-bottom-color:var(--sawdust,#e3a95b)}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Yard Sign in Your Lawn",
+    "overview": "The system is the owner's own corrugated yard sign (src-assets/post.jpg) translated to a phone: forest green and cream, heavy condensed uppercase lettering, the stump-with-rings mark, thin rule lines, and the phone number set as large as the headline. Green surfaces are lawn; cream surfaces are sign boards planted in it. Where a board meets the lawn, grass grows up over its bottom edge.\n\nDensity is low and plain-spoken. One column on phones, generous tap targets (44px minimum, 50-58px for primary controls), no ornament that the sign itself does not carry. Motion is confined to two places: the hero stump being ground and the grass edges. Everything else is still.\n\nThe direction contract lives as a comment at the top of <body> in index.html (THESIS, OWN-WORLD, STORY, FIRST VIEWPORT, FORM). Future surfaces read it before adding anything.",
+    "keyCharacteristics": [
+      "Two-color world taken from the sign: forest green ground, cream boards.",
+      "Condensed uppercase display type from the system stack; no web fonts.",
+      "Rule lines frame headings on boards, as on the sign.",
+      "The phone number is a display element, not a footnote.",
+      "One signature hero animation plus ambient grass; nothing else moves."
+    ],
+    "rules": [
+      { "name": "The Sign Colors Rule", "body": "Green and cream carry every surface. The page ground is never black (PRODUCT.md brand commitment).", "section": "colors" },
+      { "name": "The Sawdust Only Moves Rule", "body": "Sawdust appears only in response to the visitor: hover, focus, selection. A surface at rest is green and cream.", "section": "colors" },
+      { "name": "The House Stack Rule", "body": "The display face is a system condensed stack, including Android's `sans-serif-condensed`. This is the owner's house rule: no web fonts, no downloads. Do not \"fix\" it with a hosted face.", "section": "typography" },
+      { "name": "The Uppercase Is for Display Rule", "body": "Uppercase belongs to the condensed display face (headline, wordmark). Body, labels and buttons stay sentence case.", "section": "typography" },
+      { "name": "The Planted Not Floating Rule", "body": "Boards sit in the lawn; they are never lifted with shadows. Separation comes from the green/cream change and the grass edge.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do build every surface from green and cream; reserve sawdust for hover, focus and selection.",
+      "Do frame board headings with 3px rule lines, and set the phone number between rules at display size.",
+      "Do end every cream board with a grass edge where it meets green.",
+      "Do keep the display face on the system condensed stack, including `sans-serif-condensed`.",
+      "Do keep primary controls at least 50px tall and every tap target at least 44px.",
+      "Do expose new motion parameters as named constants at the top of the script, and honour `STILL` and reduced motion."
+    ],
+    "donts": [
+      "Don't use a black or near-black page ground.",
+      "Don't add web fonts or a hosted display face.",
+      "Don't add motion beyond the hero stump and the grass edges.",
+      "Don't lift boards or buttons with drop shadows.",
+      "Don't set body, labels or buttons in uppercase."
+    ]
+  }
+}
