@@ -59,6 +59,12 @@
         "value": "clamp(56px,6.2vw,84px)",
         "createdAt": "2026-10-18T19:46:11.228Z",
         "reason": "Claude: desktop h1 fluid size, display role in DESIGN.md"
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "84px",
+        "createdAt": "2026-10-18T19:46:20.253Z",
+        "reason": "Claude: desktop h1 clamp endpoint, display role in DESIGN.md"
       }
     ]
   }
