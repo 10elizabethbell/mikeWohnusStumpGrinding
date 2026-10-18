@@ -1,0 +1,17 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "flat-type-hierarchy",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-10-18T19:35:30.047Z",
+        "reason": "Claude: detector skips clamp() display sizes (h1 42-104px, h2 32-56px); body steps now 15/17/21/26px"
+      }
+    ]
+  }
+}
