@@ -11,6 +11,54 @@
         ],
         "createdAt": "2026-10-18T19:35:30.047Z",
         "reason": "Claude: detector skips clamp() display sizes (h1 42-104px, h2 32-56px); body steps now 15/17/21/26px"
+      },
+      {
+        "rule": "design-system-color",
+        "value": "rgb(255, 255, 255)",
+        "createdAt": "2026-10-18T19:46:10.709Z",
+        "reason": "Claude: one-off documented as non-token in DESIGN.md (yard hint over lawn)"
+      },
+      {
+        "rule": "design-system-font",
+        "value": "georgia",
+        "createdAt": "2026-10-18T19:46:10.804Z",
+        "reason": "Claude: one-off documented as non-token in DESIGN.md (footer thank-you line standing in for the sign's script)"
+      },
+      {
+        "rule": "design-system-radius",
+        "value": "6px",
+        "createdAt": "2026-10-18T19:46:10.877Z",
+        "reason": "Claude: one-off documented as non-token in DESIGN.md (focus ring corner)"
+      },
+      {
+        "rule": "design-system-color",
+        "value": "#3a7a3c",
+        "createdAt": "2026-10-18T19:46:10.946Z",
+        "reason": "Claude: one-off documented as non-token in DESIGN.md (lawn fallback gradient)"
+      },
+      {
+        "rule": "design-system-color",
+        "value": "#2c6331",
+        "createdAt": "2026-10-18T19:46:11.019Z",
+        "reason": "Claude: one-off documented as non-token in DESIGN.md (lawn fallback gradient)"
+      },
+      {
+        "rule": "design-system-color",
+        "value": "#000",
+        "createdAt": "2026-10-18T19:46:11.087Z",
+        "reason": "Claude: alpha value inside a CSS mask-image, not a visible color"
+      },
+      {
+        "rule": "design-system-color",
+        "value": "#55695a",
+        "createdAt": "2026-10-18T19:46:11.158Z",
+        "reason": "Claude: one-off documented as non-token in DESIGN.md (placeholder text)"
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "clamp(56px,6.2vw,84px)",
+        "createdAt": "2026-10-18T19:46:11.228Z",
+        "reason": "Claude: desktop h1 fluid size, display role in DESIGN.md"
       }
     ]
   }
